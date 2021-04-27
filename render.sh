@@ -1,2 +1,2 @@
 #!/bin/bash
-java -Dj3d.rend=noop -cp .:SweetHome3D-5.4.jar:sunflow-0.07.3i.jar:j3dcore.jar:vecmath.jar:j3dutils.jar:batik-svgpathparser-1.7.jar com.eteks.sweethome3d.utilities.ConsolePhotoGenerator userGuideExample.sh3d photo.png
+java -Dj3d.rend=noop -cp .:SweetHome3D-6.5.2.jar:sunflow-0.07.3i.jar:j3dcore.jar:vecmath.jar:j3dutils.jar:batik-svgpathparser-1.7.jar com.eteks.sweethome3d.utilities.ConsolePhotoGenerator userGuideExample.sh3d photo.png
