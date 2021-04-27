@@ -38,19 +38,19 @@ import com.eteks.sweethome3d.model.RecorderException;
 public class ConsolePhotoGenerator {
   public static void main(final String [] args) throws RecorderException, IOException {
     String homeFile = args [0];
-    String homePhoto = args [1];    
-    Home home = new HomeFileRecorder().readHome(homeFile);    
+    String homePhoto = args [1];
+    Home home = new HomeFileRecorder().readHome(homeFile);
     HomeEnvironment environment = home.getEnvironment();
     PhotoRenderer renderer = new PhotoRenderer(home,
-        environment.getPhotoQuality() == 3
+        environment.getPhotoQuality() == 3 // Set to 3 for Level 4, 4 for Level 3
             ? PhotoRenderer.Quality.HIGH
             : PhotoRenderer.Quality.LOW);
     UI.set(new ConsoleInterface());
     BufferedImage image = new BufferedImage(
-        1280, 720, // Width, Height of picture
+        1280, 720, // Photo Resolution in Width, Height
         BufferedImage.TYPE_INT_ARGB);
     renderer.render(image, home.getCamera(), null);
     ImageIO.write(image, homePhoto.substring(homePhoto.lastIndexOf('.') + 1),
-        new File(homePhoto));        
+        new File(homePhoto));   
   }
 }
