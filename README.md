@@ -10,8 +10,8 @@ Using [ConsolePhotoGenerator](http://www.sweethome3d.com/support/forum/viewthrea
 4. Render your SH3D file. (Replace userGuideExample.sh3d with your file) `java -Dj3d.rend=noop -cp .:SweetHome3D-6.5.2.jar:sunflow-0.07.3i.jar:j3dcore.jar:vecmath.jar:j3dutils.jar:batik-svgpathparser-1.7.jar com.eteks.sweethome3d.utilities.ConsolePhotoGenerator userGuideExample.sh3d photo.png`
 
 ### Render quality
-Only 2 options are available, Level 4 (Global illumination) & Level 3 (Fast global illumination). Level 2 & 1 are not available as it uses GPU rendering. (And it's fast not to bother rendering on a server.)\
-To change quality, modify ConsolePhotoGenerator.java `environment.getPhotoQuality() == 3` for Level 4 & `environment.getPhotoQuality() == 4` for Level 3.
+Only 2 options are available, Level 3 (Fast global illumination) & Level 4 (Global illumination). Level 1 & 2 are not available as it uses GPU rendering. (And it's fast not to bother rendering on a server.)\
+Render quality are determined on the .sh3d file, to change render quality, open Create a photo from 3D view, change the render quality, and save your file.
 
 ### Viewpoint
 Viewpoint are determined on the .sh3d file, to change viewpoint, open your .sh3d file, change the camera viewpoint on the 3D view, and save your file.

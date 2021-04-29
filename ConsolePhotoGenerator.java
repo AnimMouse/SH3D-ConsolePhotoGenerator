@@ -42,7 +42,7 @@ public class ConsolePhotoGenerator {
     Home home = new HomeFileRecorder().readHome(homeFile);
     HomeEnvironment environment = home.getEnvironment();
     PhotoRenderer renderer = new PhotoRenderer(home,
-        environment.getPhotoQuality() == 3 // Set to 3 for Level 4, 4 for Level 3
+        environment.getPhotoQuality() == 3
             ? PhotoRenderer.Quality.HIGH
             : PhotoRenderer.Quality.LOW);
     UI.set(new ConsoleInterface());
