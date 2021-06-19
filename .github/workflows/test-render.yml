@@ -1,0 +1,35 @@
+name: Test Render Sweet Home 3D Console Photo Generator
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - README.md
+      - .github/dependabot.yml
+      
+jobs:
+  render:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          
+      - name: Install dependencies
+        run: ./dependencies.sh
+        
+      - name: Compile Console Photo Generator
+        run: ./compile.sh
+        
+      - name: Download userGuideExample.sh3d
+        run: aria2c -x 16 "http://www.sweethome3d.com/examples/userGuideExample.sh3d"
+        
+      - name: Render userGuideExample.sh3d
+        run: ./render.sh
+        
+      - name: Upload rendered photo
+        uses: actions/upload-artifact@v2
+        with:
+          name: Photo
+          path: photo.png
