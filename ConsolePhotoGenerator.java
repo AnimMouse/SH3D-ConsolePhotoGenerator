@@ -47,7 +47,7 @@ public class ConsolePhotoGenerator {
             : PhotoRenderer.Quality.LOW);
     UI.set(new ConsoleInterface());
     BufferedImage image = new BufferedImage(
-        1280, 720, // Photo Resolution in Width, Height
+        1920, 1080, // Photo Resolution in Width, Height
         BufferedImage.TYPE_INT_ARGB);
     renderer.render(image, home.getCamera(), null);
     ImageIO.write(image, homePhoto.substring(homePhoto.lastIndexOf('.') + 1),
